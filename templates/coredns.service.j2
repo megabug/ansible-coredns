@@ -25,7 +25,7 @@ ExecStart=/usr/local/bin/coredns \
 SyslogIdentifier=coredns
 ExecReload=/bin/kill -SIGUSR1 $MAINPID
 Restart=always
-RestartSec=0
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
