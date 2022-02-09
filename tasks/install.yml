@@ -45,7 +45,6 @@
       unarchive:
         src: "/tmp/coredns_{{ coredns_version }}_linux_{{ go_arch }}.tgz"
         dest: "/tmp"
-        creates: "/tmp/coredns"
       delegate_to: localhost
       check_mode: false
 
