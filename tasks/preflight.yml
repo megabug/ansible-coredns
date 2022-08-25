@@ -9,10 +9,10 @@
     that: ansible_service_mgr == 'systemd'
     msg: "This module only works with systemd"
 
-- name: Check if source Corefile is set
+- name: Check if config names are set
   assert:
-    that: coredns_config_file != ""
-    msg: "variable coredns_config_file cannot be empty"
+    that: coredns_config_names != []
+    msg: "variable coredns_config_names cannot be empty"
 
 - name: "Get checksum for {{ go_arch }} architecture"
   set_fact:

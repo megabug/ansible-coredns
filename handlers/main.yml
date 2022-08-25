@@ -3,5 +3,6 @@
   become: true
   systemd:
     daemon_reload: true
-    name: coredns
+    name: "coredns@{{ item }}"
     state: restarted
+  loop: "{{ coredns_config_names }}"

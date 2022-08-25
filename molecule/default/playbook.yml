@@ -4,4 +4,5 @@
   roles:
     - ansible-coredns
   vars:
-    coredns_config_file: "Corefile.example.j2"
+    coredns_config_names:
+      - "main"

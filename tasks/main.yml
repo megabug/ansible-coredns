@@ -19,7 +19,8 @@
   become: true
   systemd:
     daemon_reload: true
-    name: coredns
+    name: "coredns@{{ item }}"
     enabled: true
+  loop: "{{ coredns_config_names }}"
   tags:
     - coredns_run

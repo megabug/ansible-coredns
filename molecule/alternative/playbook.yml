@@ -6,7 +6,8 @@
     - ansible-coredns
   vars:
     coredns_binary_local_dir: "/tmp"
-    coredns_config_file: "Corefile.example.j2"
+    coredns_config_names:
+      - "main"
     coredns_dns_port: 5300
     coredns_system_group: "different"
     coredns_system_user: "different"

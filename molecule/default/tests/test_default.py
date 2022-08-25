@@ -10,7 +10,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 @pytest.mark.parametrize("files", [
     "/usr/local/bin/coredns",
     "/etc/coredns/Corefile",
-    "/etc/systemd/system/coredns.service"
+    "/etc/systemd/system/coredns@main.service"
 ])
 def test_files(host, files):
     f = host.file(files)
@@ -24,7 +24,7 @@ def test_user(host):
 
 
 def test_service(host):
-    s = host.service("coredns")
+    s = host.service("coredns@main")
     # assert s.is_enabled
     assert s.is_running
 

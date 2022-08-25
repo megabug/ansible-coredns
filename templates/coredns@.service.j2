@@ -19,10 +19,10 @@ WorkingDirectory=/etc/coredns
 User={{ coredns_system_user }}
 Group={{ coredns_system_group }}
 ExecStart=/usr/local/bin/coredns \
-    -conf /etc/coredns/Corefile \
+    -conf /etc/coredns/Corefile-%i \
     -dns.port "{{ coredns_dns_port }}"
 
-SyslogIdentifier=coredns
+SyslogIdentifier=coredns-%i
 ExecReload=/bin/kill -SIGUSR1 $MAINPID
 Restart=always
 RestartSec=5

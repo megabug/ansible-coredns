@@ -1,11 +1,12 @@
 ---
-- name: Copy configuration file
+- name: Copy configuration files
   template:
-    src: "{{ coredns_config_file }}"
-    dest: /etc/coredns/Corefile
+    src: "Corefile-{{ item }}"
+    dest: /etc/coredns
     owner: root
     group: root
     mode: 0644
+  loop: "{{ coredns_config_names }}"
   notify: restart coredns
 
 - name: Copy zone files
